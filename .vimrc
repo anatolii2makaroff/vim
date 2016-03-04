@@ -51,6 +51,9 @@ set shiftwidth=4
 set shiftround
 set expandtab
 
+set backspace=2 " make backspace work like most other apps
+set backspace=indent,eol,start
+
 let g:pymode_rope = 0
 let g:pymode_rope_completion = 0
 let g:pymode_rope_complete_on_dot = 0
