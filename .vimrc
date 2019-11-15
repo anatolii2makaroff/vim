@@ -1,13 +1,13 @@
-set nocompatible     
+set nocompatible
 
 syntax on
-filetype off        
+filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 
-Plugin 'The-NERD-tree' 
+Plugin 'The-NERD-tree'
 Plugin 'Tagbar'
 Plugin 'bling/vim-airline'
 Plugin 'ctrlp.vim'
@@ -16,8 +16,9 @@ Plugin 'Python-mode-klen'
 Plugin 'surround.vim'
 Plugin 'molokai'
 Plugin 'fatih/vim-go'
+Plugin 'chiel92/vim-autoformat'
 
-call vundle#end()      
+call vundle#end()
 filetype plugin indent on
 
 nmap <F3> :NERDTreeToggle<CR>
@@ -75,8 +76,8 @@ let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 let g:pymode_run = 0
-au FileType python nmap <leader>r :!python %<CR>
 
+au FileType python nmap <leader>r :!python %<CR>
 autocmd FileType python map <buffer> <leader>8 :PymodeLint<CR>
 
 inoremap <C-space> <C-x><C-o>
@@ -106,3 +107,10 @@ let g:go_fmt_autosave = 1
 
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
+au FileType java nmap <leader>c :!make<CR>
+au FileType java nmap <leader>r :!make run<CR>
+au FileType java nmap <leader>d :!make debug<CR>
+au FileType java nmap <leader>b :!make build<CR>
+
+au BufWrite * :Autoformat
