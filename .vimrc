@@ -110,6 +110,7 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 au FileType java nmap <leader>c :!make<CR>
 au FileType java nmap <leader>r :!make run<CR>
+au FileType java nmap <leader>t :!make test<CR>
 au FileType java nmap <leader>d :!make debug<CR>
 au FileType java nmap <leader>b :!make build<CR>
 
